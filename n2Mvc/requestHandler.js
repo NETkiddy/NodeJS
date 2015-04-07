@@ -39,6 +39,8 @@ function controllerContext(request, response){
 
 controllerContext.prototype.render = function(viewName, context){
 			console.log('controllerContext.prototype.render');
+			console.log('this.request: '+ this.request);
+			console.log('this.response: '+this.response);
 	viewEngine.render(this.request, this.response, viewName, context);
 };
 

@@ -24,7 +24,9 @@ function get_tweets(){
 			body += chunk;
 		});
 		response.addListener('end', function(){
+			console.log('body: ' + body);
 			var tweets = JSON.parse(body);
+			console.log('tweets: ' + tweets);
 			if(tweets.length > 0){
 				console.log('get tweets \n');
 				tweets_emitter.emit('tweets', tweets);
